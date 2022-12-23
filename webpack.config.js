@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { SkeletonPlugin } = require('./skeleton')
 
 module.exports = {
     mode: 'development',
@@ -32,6 +33,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        })
+        }),
+        new SkeletonPlugin()
     ]
 }
