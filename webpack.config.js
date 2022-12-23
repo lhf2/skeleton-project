@@ -4,6 +4,7 @@ const { SkeletonPlugin } = require('./skeleton')
 
 module.exports = {
     mode: 'development',
+    devtool: false,
     entry: './src/index.js',
     output: {
         path: resolve(__dirname, 'dist'),
@@ -37,7 +38,8 @@ module.exports = {
         new SkeletonPlugin({
             staticDir: resolve(__dirname, 'dist'),
             port: 8000,
-            origin: 'http://localhost:8000'
+            origin: 'http://localhost:8000',
+            device: 'iPhone 6'
         })
     ]
 }

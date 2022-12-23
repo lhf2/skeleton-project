@@ -1,5 +1,6 @@
 // 插件的本质是一个类，有 apply 方法
 const Server = require('./Server')
+const Skeleton = require('./Skeleton')
 const PLUGIN_NAME = 'SkeletonPlugin';
 class SkeletonPlugin {
     constructor(options) {
@@ -10,6 +11,14 @@ class SkeletonPlugin {
         compiler.hooks.done.tap(PLUGIN_NAME, async () => {
             // 1. 创建一个静态资源服务器
             await this.startServer()
+
+            // 2. 启动 puppeteer
+            this.skeleton = new Skeleton(this.options)
+            await this.skeleton.init()
+            const skeletonHtml = await this.skeleton.genHtml(this.options.origin)
+            console.log('skeletonHtml',skeletonHtml);
+
+            // await this.skeleton.destory()
             // await this.server.close()
         })
     }
