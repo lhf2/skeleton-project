@@ -34,6 +34,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
-        new SkeletonPlugin()
+        new SkeletonPlugin({
+            staticDir: resolve(__dirname, 'dist'),
+            port: 8000,
+            origin: 'http://localhost:8000'
+        })
     ]
 }
