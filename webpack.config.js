@@ -39,7 +39,13 @@ module.exports = {
             staticDir: resolve(__dirname, 'dist'),
             port: 8000,
             origin: 'http://localhost:8000',
-            device: 'iPhone 6'
+            device: 'iPhone 6',
+            button: {
+                color: '#9e9e9e'
+            },
+            image: {
+                color: '#9e9e9e'
+            }
         })
     ]
 }

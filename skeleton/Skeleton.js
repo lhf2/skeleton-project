@@ -8,7 +8,7 @@ class Skeleton {
     }
     async init() {
         // 启动一个无头浏览器（headless: true）
-        this.browser = await puppeteer.launch({ headless: false })
+        this.browser = await puppeteer.launch({ headless: true })
     }
     async newPage() {
         const { device } = this.options
