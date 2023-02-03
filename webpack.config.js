@@ -37,6 +37,7 @@ module.exports = {
         }),
         new SkeletonPlugin({
             staticDir: resolve(__dirname, 'dist'),
+            // 启动的服务器
             port: 8000,
             origin: 'http://localhost:8000',
             device: 'iPhone 6',
