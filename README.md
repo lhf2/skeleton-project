@@ -14,20 +14,20 @@ root.render(
 2. 使用 webpack 进行配置打包
 3. 创建一个骨架屏插件 SkeletonPlugin
 ```
-        使用方法如下：
-        new SkeletonPlugin({
-            staticDir: resolve(__dirname, 'dist'),
-            // 启动的服务器
-            port: 8000,
-            origin: 'http://localhost:8000',
-            device: 'iPhone 6',
-            button: {
-                color: '#9e9e9e'
-            },
-            image: {
-                color: '#9e9e9e'
-            }
-        })
+使用方法如下：
+new SkeletonPlugin({
+    staticDir: resolve(__dirname, 'dist'),
+    // 启动的服务器
+    port: 8000,
+    origin: 'http://localhost:8000',
+    device: 'iPhone 6',
+    button: {
+        color: '#9e9e9e'
+    },
+    image: {
+        color: '#9e9e9e'
+    }
+})        
 ```
    - 在编译完成，生成 dist 目录的时候触发钩子 ```compiler.hooks.done.tap```
      -  使用 ```express()```创建一个静态资源服务器，用 staticDir 作为静态资源根目录，运行在 port 端口上；
